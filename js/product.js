@@ -52,9 +52,9 @@ function getProductsList(currPage, row) {
 			$("#productShow").html('');
 			$.each(data.pageList, function(i, item) {
 				if(i % 2 == 0) {
-					productList += '<div style="height:405px;cursor:pointer;background:#f2f2f2;" onClick="openProductDetail(' + item.id + ')"><div class="body_1002"><div class="FL pd_gkl"><div class="pd_rt_cn">' + item.name + '</div><div class="pd_rt_cn2">' + item.desc.substr(0,10) + '……</div><div class="pd_rt_cn3"><img src="../img/product/jszc_gd.jpg" /></div></div><div style="float: right;"><img src="'+item.img+'" style="height:300px;width: 300px;margin: 50px 0px;"/></div></div></div>';
+					productList += '<div style="height:405px;cursor:pointer;background:#f2f2f2;" onClick="openProductDetail(' + item.id + ')"><div class="body_1002"><div class="FL pd_gkl"><div class="pd_rt_cn">' + item.name + '</div><div class="pd_rt_cn2">' + item.desc.substr(0,10) + '……</div><div class="pd_rt_cn3"><img src="../img/product/jszc_gd1.jpg" /></div></div><div style="float: right;"><img src="'+item.img+'" style="height:300px;width: 300px;margin: 50px 0px;"/></div></div></div>';
 				} else {
-					productList += '<div style="height:405px;cursor:pointer;background:#ededed;" onClick="openProductDetail(' + item.id + ')"><div class="body_1002"><div style="float: left;"><img src="'+item.img+'" style="height:300px;width: 300px;margin: 50px 0px;"/></div><div class="FL pd_gk"><div class="pd_rt_cn">' + item.name + '</div><div class="pd_rt_cn2">' + item.desc.substr(0,10) + '……</div><div class="pd_rt_cn3"><img src="../img/product/jszc_gd.jpg" /></div></div></div></div>';
+					productList += '<div style="height:405px;cursor:pointer;background:#ededed;" onClick="openProductDetail(' + item.id + ')"><div class="body_1002"><div style="float: left;"><img src="'+item.img+'" style="height:300px;width: 300px;margin: 50px 0px;"/></div><div class="FL pd_gk"><div class="pd_rt_cn">' + item.name + '</div><div class="pd_rt_cn2">' + item.desc.substr(0,10) + '……</div><div class="pd_rt_cn3"><img src="../img/product/jszc_gd1.jpg" /></div></div></div></div>';
 				}
 			})
 			$("#productShow").append(productList);

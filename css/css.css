@@ -172,7 +172,7 @@ body, td, div, input, a{
 .lic_r:hover{background:url(bg_lic_r_ov.gif) left center no-repeat;}
 .lic_r:hover div{color:#FFF;}
 /*about_pd*/
-.pd_gsjj{ height:549px; background:url(../img/qiyegaikuang/a_pd_1.jpg) no-repeat top; cursor:pointer;}
+.pd_gsjj{ height:549px; background:url(../img/qiyegaikuang/jszc_gd.jpg) no-repeat top; cursor:pointer;    background-size: 100% 100%}
 .pd_gsjj_bt{ padding-top:74px;font-family:微软雅黑; font-size:24px;font-weight:900;}
 .gsjj{ padding-top:34px; line-height:26px; width:572px; font-family:微软雅黑; font-size:16px;}
 .fzlc{ height:422px; background:url(fzlc.jpg) no-repeat top; cursor:pointer;}

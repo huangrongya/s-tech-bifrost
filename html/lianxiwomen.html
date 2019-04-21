@@ -50,6 +50,8 @@
 				text-align: center;
 				line-height: 26px;
 				float: right;
+				width: 200px;
+				margin-top: 20px;
 			}
 			
 			.ct_2vm img {
@@ -227,7 +229,9 @@
 				<!--<div class="bg_nov0" style="display:">
 					<a href="index2e76.html?id0=z0iayxdw4y&amp;id1=z0iayxgehj">在线反馈</a>
 				</div>-->
-
+				<div class="ct_2vm"><img src="../img/qrcode.jpg" style="width:200px" alt="扫一扫，加关注" /><br />
+					<!--扫一扫，加关注-->
+				</div>
 			</div>
 
 			<div class="FR wr_not">
@@ -296,10 +300,9 @@
 										<tbody>
 											<tr>
 												<td valign="top" class="pd_ct">
+
 													<div class="ct_not">
-														<div class="ct_2vm"><img src="../img/qrcode.jpg" alt="扫一扫，加关注" /><br />
-														 <!--扫一扫，加关注-->
-														</div>
+
 														联系人：滕经理<br /> 电话：15356254320
 														<!--<br />--> 
 														<!--地址：浙江省温州市高新技术产业区高一路158号F栋2层-->
@@ -318,7 +321,7 @@
 								<div style="width:700px;height:330px;border:#ccc solid 1px;font-size:12px" id="map"></div>
 							</div>
 
-							<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=598bfc274dc39bfd619d716d52f69b90"></script>
+							<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=pO0nmSwpdgTkjt8touxcsnI6F5xHnRZH"></script>
 
 							<script type="text/javascript">
 								//创建和初始化地图函数：
@@ -330,8 +333,22 @@
 								}
 
 								function createMap() {
-									map = new BMap.Map("map");
-									map.centerAndZoom(new BMap.Point(120.736851, 27.972135), 19);
+									// 百度地图API功能
+									var map = new BMap.Map("map");    // 创建Map实例
+									var point = new BMap.Point(120.660071,27.978602);
+									map.centerAndZoom(point, 19);  // 初始化地图,设置中心点坐标和地图级别
+									var marker = new BMap.Marker(point);  // 创建标注
+									//添加地图类型控件
+									map.addControl(new BMap.MapTypeControl({
+										mapTypes:[
+											BMAP_NORMAL_MAP,
+											BMAP_HYBRID_MAP
+										]}));
+									map.setCurrentCity("温州市牛山北路高新区炬光园中路118号");          // 设置地图显示的城市 此项是必须设置的
+									map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+									map.addOverlay(marker);               // 将标注添加到地图中
+									marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
 								}
 
 								function setMapEvent() {
@@ -356,14 +373,16 @@
 											height: 3
 										},
 										position: {
+											// lat: 100,
 											lat: 120.660071,
+											// lng: 100
 											lng: 27.978602
 										}
 									}];
 									for(var index = 0; index < markers.length; index++) {
 										var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
 										var marker = new BMap.Marker(point, {
-											icon: new BMap.Icon("../api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
+											icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
 												imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
 											})
 										});
